@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <title>URL Shortener</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1><center>URL SHORTENER </center></h1>
+        <center><form action="/" method="post"> 
+            
+            {% csrf_token %}
+            
+            {{ form.as_ul }}
+            <center><input type="submit" value="create"><br><br></center>
+            {% for url in urlset %}
+
+           {{ url.shortened_url }} :  {{ url.original_url }}  <br>
+
+            {% endfor %}
+        </center>
+        </form>
+    </div>
+  </body>
+</html>
